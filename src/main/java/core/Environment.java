@@ -6,9 +6,9 @@ public class Environment {
     private int width;
     private Agent[][] agentGrid;
 
-    public Environment(int height, int width) throws ZeroLengthArrayException {
+    public Environment(int height, int width) throws ZeroLengthArrayThrowable {
         if (height == 0 || width == 0) {
-            throw new ZeroLengthArrayException();
+            throw new ZeroLengthArrayThrowable();
         }
         this.height = height;
         this.width = width;
@@ -27,9 +27,9 @@ public class Environment {
         return this.agentGrid;
     }
 
-    public Agent getAgent(int y, int x) throws NoAgentException {
+    public Agent getAgent(int y, int x) throws NoAgentThrowable {
         if (this.agentGrid[y][x] == null) {
-            throw new NoAgentException();
+            throw new NoAgentThrowable();
         }
         return this.agentGrid[y][x];
     }

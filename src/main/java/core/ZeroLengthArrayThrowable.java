@@ -1,6 +1,6 @@
 package core;
 
-public class ZeroLengthArrayException extends Throwable {
+public class ZeroLengthArrayThrowable extends Throwable {
 
     @Override
     public String getMessage() {

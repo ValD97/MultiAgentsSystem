@@ -10,48 +10,48 @@ import static org.mockito.Mockito.when;
 public class TestEnvironment {
 
     @Test
-    public void whenCreatingEnvironment_thenItIsNotNull() throws ZeroLengthArrayException {
+    public void whenCreatingEnvironment_thenItIsNotNull() throws ZeroLengthArrayThrowable {
         Environment environment = new Environment(5, 10);
         assertNotNull(environment);
     }
 
     @Test
-    public void whenCreatingEnvironment_thenItHasWidth() throws ZeroLengthArrayException {
+    public void whenCreatingEnvironment_thenItHasWidth() throws ZeroLengthArrayThrowable {
         Environment environment = new Environment(5, 10);
         assertEquals(10, environment.getWidth());
     }
 
     @Test
-    public void whenCreatingEnvironment_thenItHasHeight() throws ZeroLengthArrayException {
+    public void whenCreatingEnvironment_thenItHasHeight() throws ZeroLengthArrayThrowable {
         Environment environment = new Environment(5, 10);
         assertEquals(5, environment.getHeight());
     }
 
     @Test
-    public void whenCreatingEnvironment_thenItInitializesAnArrayWithHeightAndWidth() throws ZeroLengthArrayException {
+    public void whenCreatingEnvironment_thenItInitializesAnArrayWithHeightAndWidth() throws ZeroLengthArrayThrowable {
         Environment environment = new Environment(6, 7);
         assertEquals(environment.getHeight(), environment.getAgentGrid().length);
         assertEquals(environment.getWidth(), environment.getAgentGrid()[0].length);
     }
 
-    @Test(expected = ZeroLengthArrayException.class)
-    public void whenCreatingEnvironmentWithANullHeight_thenItThrowsAnException() throws ZeroLengthArrayException {
+    @Test(expected = ZeroLengthArrayThrowable.class)
+    public void whenCreatingEnvironmentWithANullHeight_thenItThrowsAnException() throws ZeroLengthArrayThrowable {
         new Environment(0, 1);
     }
 
-    @Test(expected = ZeroLengthArrayException.class)
-    public void whenCreatingEnvironmentWithANullWidth_thenItThrowsAnException() throws ZeroLengthArrayException {
+    @Test(expected = ZeroLengthArrayThrowable.class)
+    public void whenCreatingEnvironmentWithANullWidth_thenItThrowsAnException() throws ZeroLengthArrayThrowable {
         new Environment(1, 0);
     }
 
-    @Test(expected = NoAgentException.class)
-    public void whenGettingAnNonExisingAgent_thenItThrowsAnException() throws ZeroLengthArrayException, NoAgentException {
+    @Test(expected = NoAgentThrowable.class)
+    public void whenGettingAnNonExisingAgent_thenItThrowsAnException() throws ZeroLengthArrayThrowable, NoAgentThrowable {
         Environment environment = new Environment(4, 4);
         environment.getAgent(0, 0);
     }
 
     @Test
-    public void whenAddingAnAgent_thenTheAgentIsAccessible() throws ZeroLengthArrayException, NoAgentException {
+    public void whenAddingAnAgent_thenTheAgentIsAccessible() throws ZeroLengthArrayThrowable, NoAgentThrowable {
         Environment environment = new Environment(5, 5);
         Agent agent = mock(Agent.class);
         when(agent.getPosX()).thenReturn(3);

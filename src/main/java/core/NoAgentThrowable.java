@@ -1,6 +1,6 @@
 package core;
 
-public class NoAgentException extends Throwable {
+public class NoAgentThrowable extends Throwable {
 
     @Override
     public String getMessage() {
