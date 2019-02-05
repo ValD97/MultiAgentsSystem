@@ -46,17 +46,17 @@ public class TestEnvironment {
 
     @Test(expected = NoAgentException.class)
     public void whenGettingAnNonExisingAgent_thenItThrowsAnException() throws ZeroLengthArrayException, NoAgentException {
-        Environment environment = new Environment(4,4);
-        environment.getAgent(0,0);
+        Environment environment = new Environment(4, 4);
+        environment.getAgent(0, 0);
     }
 
     @Test
     public void whenAddingAnAgent_thenTheAgentIsAccessible() throws ZeroLengthArrayException, NoAgentException {
-        Environment environment = new Environment(5,5);
+        Environment environment = new Environment(5, 5);
         Agent agent = mock(Agent.class);
         when(agent.getPosX()).thenReturn(3);
         when(agent.getPosY()).thenReturn(2);
         environment.addAgent(agent);
-        assertEquals(agent, environment.getAgent(2,3));
+        assertEquals(agent, environment.getAgent(2, 3));
     }
 }

@@ -10,7 +10,8 @@ public class TestAgent {
     @Test
     public void whenCreatingAgent_thenItIsNotNull() {
         Agent agent = new Agent(0, 1) {
-            public void decide() {}
+            public void decide() {
+            }
         };
         assertNotNull(agent);
     }
@@ -18,7 +19,8 @@ public class TestAgent {
     @Test
     public void whenCreatingAgentWithPos_thenItHasPos() {
         Agent agent = new Agent(0, 1) {
-            public void decide() {}
+            public void decide() {
+            }
         };
         assertEquals(1, agent.getPosX());
         assertEquals(0, agent.getPosY());
@@ -27,7 +29,8 @@ public class TestAgent {
     @Test
     public void whenSettingPosX_thenItUpdatesPosX() {
         Agent agent = new Agent(1, 2) {
-            public void decide() {}
+            public void decide() {
+            }
         };
         agent.setPosX(0);
         assertEquals(0, agent.getPosX());
@@ -38,7 +41,8 @@ public class TestAgent {
     @Test
     public void whenSettingPosY_thenItUpdatesPosY() {
         Agent agent = new Agent(2, 3) {
-            public void decide() {}
+            public void decide() {
+            }
         };
         agent.setPosY(0);
         assertEquals(0, agent.getPosY());
